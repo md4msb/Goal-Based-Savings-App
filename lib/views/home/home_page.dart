@@ -1,3 +1,4 @@
+import 'package:fello_gbs/utils/asset_images.dart';
 import 'package:fello_gbs/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,11 +20,10 @@ class HomePage extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            Image.asset(FelloAssetImages.felloLogo, height: 35),
             CircleAvatar(
-              // backgroundColor: FelloColors.primary.withOpacity(0.5),
               backgroundImage: NetworkImage(cubit.userInfo.photo ?? ''),
             ),
-            const CircleAvatar()
           ],
         ),
       ),
@@ -42,4 +42,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-

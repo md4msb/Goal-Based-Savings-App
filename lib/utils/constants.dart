@@ -28,12 +28,9 @@ class FelloStrings {
   static const String savingsGoalTitle = 'Save for your goals';
   static const String navBackText = 'Go back';
 
-  static const String iphoneGoal = "iPhone";
+  static const String iphoneGoal = "New iPhone";
   static const String bikeGoal = "Bike";
 
   static const String monthText = "months";
-
-
-
 }
 

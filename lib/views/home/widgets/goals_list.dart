@@ -1,3 +1,4 @@
+import 'package:fello_gbs/utils/asset_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
@@ -36,14 +37,35 @@ class CreateGoalSection extends StatelessWidget {
                 height: 130,
                 width: 130,
                 decoration: BoxDecoration(
-                    color: FelloColors.primary,
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFFa48942), FelloColors.darkColor],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
+                    border: Border.all(color: const Color(0xFF26252c)),
                     borderRadius: BorderRadius.circular(10)),
-                child: const Center(
-                  child: FelloText(FelloStrings.iphoneGoal),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.only(top: 20, left: 15),
+                      child: FelloText(FelloStrings.iphoneGoal),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Image.asset(
+                          FelloAssetImages.iphoneImage,
+                          height: 85,
+                        )
+                      ],
+                    )
+                  ],
                 ),
               ),
             ),
-             GestureDetector(
+            GestureDetector(
               onTap: () {
                 Get.to(() => BlocProvider(
                       create: (context) => GoalCreationCubit(),
@@ -62,7 +84,6 @@ class CreateGoalSection extends StatelessWidget {
                 ),
               ),
             ),
-
           ],
         )
       ],
